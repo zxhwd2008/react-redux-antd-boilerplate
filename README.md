@@ -10,7 +10,8 @@
 * Antd
 * Less
 * Test Runners: Karma
-* Packaging, Build tools: Webpack, npm
+* Packaging, Build tools, Compiler: Webpack, Babel, npm
+* Linting: ESLint
 
 ## Introduction
 
