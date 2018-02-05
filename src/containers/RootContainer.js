@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { Root } from '../routes/Root'
+import { Root } from 'routes/Root'
 import {
   Router as RouterState,
 } from '../modules/Router'

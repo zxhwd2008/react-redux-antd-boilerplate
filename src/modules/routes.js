@@ -1,11 +1,11 @@
 import React from 'react'
 import { Route, IndexRoute, Redirect } from 'react-router'
 
-import { RootContainer } from '../containers/RootContainer'
+import { RootContainer } from 'containers/RootContainer'
 
-import { Home } from '../routes/Home'
+import { Home } from 'routes/Home'
 
-import { GithubManagerContainer } from '../containers/GithubManagerContainer'
+import { GithubManagerContainer } from 'containers/GithubManagerContainer'
 
 export default (
   <Route path="/" component={RootContainer}>

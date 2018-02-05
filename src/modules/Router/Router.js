@@ -1,5 +1,5 @@
-import { getField } from '../utils/immutableUtils'
-import { createState } from '../utils/createState'
+import { getField } from 'modules/utils/immutableUtils'
+import { createState } from 'modules/utils/createState'
 
 export const Router = createState({
   name: 'routing',

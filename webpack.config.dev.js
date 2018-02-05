@@ -6,15 +6,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 /* eslint-disable max-len */
 module.exports = {
   devtool: 'source-map',
-  // resolve: {
-  //   root: [
-  //     path.resolve('./src')
-  //   ]
-  // },
+  resolve: {
+    root: [
+      path.resolve('./src')
+    ]
+  },
   entry: [
     'babel-polyfill',
     'webpack-hot-middleware/client',
-    './index'
+    './src/index'
   ],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -50,7 +50,7 @@ module.exports = {
         include: [/node_modules\/.*antd/],
         loader: ExtractTextPlugin.extract(
           'style',
-          'css?sourceMap&modules&importLoaders=1&localIdentName=[local]!postcss!less?sourceMap'
+          'css?sourceMap&modules&importLoaders=1&modules=false!postcss!less?sourceMap'
         ),
       },
       {

@@ -1,7 +1,6 @@
 {
   "name": "react-redux-boilerplate",
   "version": "0.0.1",
-  "main": "server.js",
   "author": "Xiaohang",
   "description": "React redux boilerplate",
   "license": "MIT",

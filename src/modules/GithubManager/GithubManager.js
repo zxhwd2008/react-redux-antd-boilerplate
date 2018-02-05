@@ -1,4 +1,4 @@
-import { createState } from '../utils/createState'
+import { createState } from 'modules/utils/createState'
 
 export const GithubManager = createState({
   name: 'GithubManager',

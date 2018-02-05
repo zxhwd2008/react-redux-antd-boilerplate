@@ -1,10 +1,10 @@
 import { connect } from 'react-redux'
 import { Promise } from 'es6-promise'
-import { GithubManager } from '../routes/GithubManager'
+import { GithubManager } from 'routes/GithubManager'
 import {
   updateField,
   GithubManager as GithubManagerState,
-} from '../modules/GithubManager'
+} from 'modules/GithubManager'
 
 const mapStateToProps = state => ({
 
