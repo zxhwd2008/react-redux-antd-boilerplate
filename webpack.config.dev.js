@@ -6,10 +6,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 /* eslint-disable max-len */
 module.exports = {
   devtool: 'source-map',
+  // resolve: {
+  //   root: [
+  //     path.resolve('./src')
+  //   ]
+  // },
   entry: [
     'babel-polyfill',
     'webpack-hot-middleware/client',
-    'bootstrap-loader',
     './index'
   ],
   output: {
@@ -42,10 +46,18 @@ module.exports = {
         include: __dirname,
       },
       {
-        test: /\.scss/,
+        test: /\.css$/,
+        include: [/node_modules\/.*antd/],
         loader: ExtractTextPlugin.extract(
           'style',
-          'css?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss!sass?sourceMap'
+          'css?sourceMap&modules&importLoaders=1&localIdentName=[local]!postcss!less?sourceMap'
+        ),
+      },
+      {
+        test: /\.less/,
+        loader: ExtractTextPlugin.extract(
+          'style',
+          'css?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss!less?sourceMap'
         ),
       },
       {
