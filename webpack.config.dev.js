@@ -50,7 +50,7 @@ module.exports = {
         include: [/node_modules\/.*antd/],
         loader: ExtractTextPlugin.extract(
           'style',
-          'css?sourceMap&modules&importLoaders=1&modules=false!postcss!less?sourceMap'
+          'css?sourceMap&modules&importLoaders=1&modules=false!postcss?sourceMap'
         ),
       },
       {
