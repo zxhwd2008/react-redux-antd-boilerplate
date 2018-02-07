@@ -26,5 +26,12 @@
     "prefer-template": 0,
     "no-path-concat": 0,
     "global-require": 0
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    }
   }
 }
