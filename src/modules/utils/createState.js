@@ -18,9 +18,8 @@ export const createState = ({ name, fields }) => {
     (value = undefined, field = undefined) => {
       if (value !== undefined) {
         return setField(prop)(value)
-      } else {
-        return field === undefined ? getFieldFromState(State.name)(prop) : getField(field)
       }
+      return field === undefined ? getFieldFromState(State.name)(prop) : getField(field)
     }
     if (Set.isSet(defaultValue)) {
       State[prop] = (value = undefined, key = undefined, action = undefined) => state => {
@@ -56,7 +55,8 @@ export const createState = ({ name, fields }) => {
         ? collection : getterAndSetter(collection)(state)
       }
     } else {
-      State[prop] = (value = undefined) => state => value !== undefined ? getterAndSetter(value)(state) : getterAndSetter()(state)
+      State[prop] = (value = undefined) => state => (value !== undefined
+      ? getterAndSetter(value)(state) : getterAndSetter()(state))
     }
   })
 

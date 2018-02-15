@@ -1,3 +1,3 @@
 export * from './GithubManager'
-export * from './GithubManagerReducer'
+export * from './githubManagerReducer'
 export * from './GithubManagerSagas'

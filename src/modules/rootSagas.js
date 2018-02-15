@@ -1,7 +1,8 @@
-import { fork } from 'redux-saga/effects'
+import { all, fork } from 'redux-saga/effects'
+import { watchGithubRequest } from 'modules/GithubManager'
 
 export default function* rootSagas() {
-  yield [
-    
-  ]
+  yield all([
+    fork(watchGithubRequest),
+  ])
 }

@@ -64,7 +64,7 @@ module.exports = {
         loader: 'url',
         query: {
           limit: 10000,
-          name: 'static/images/[name].[ext]',
+          name: 'static/asset/[name].[ext]',
         },
       },
       {

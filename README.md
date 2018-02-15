@@ -1,6 +1,12 @@
-# React-Redux-Antd-Boilerplate
+# Here-Tech-Assignment
 
-## List of lib & Frameworks
+## Description
+* Display user profile && user starred repositories by searching Github username
+* Filter starred repositories by 'Created', 'Updated' or 'Number of stars'
+* Pagination support for starred repositories
+* Details page for every starred repository
+
+## List of Libs & Frameworks
 
 * React
 * Redux
@@ -10,8 +16,10 @@
 * Antd
 * Less
 * Test Runners: Karma
+* Unit Testing Libs: Mocha, Chai, Sinon, Enzyme
 * Packaging, Build tools, Compiler: Webpack, Babel, npm
 * Linting: ESLint
+
 
 ## Introduction
 
@@ -21,10 +29,6 @@ Download the project to your local environment
 
 ```shell
 npm install --ignore-scripts
-```
-
-```shell
-npm rebuild
 ```
 
 ```shell
@@ -54,3 +58,20 @@ npm run build
 node server.prod.js
 ```
 Now you can visit: http://localhost:8080
+
+
+## Potential TODOs
+
+### Requirements
+
+* Integrate app with Github OAuth 2.0
+* Adding more filters (Filter by language, keyword etc.)
+* Parse README.md on the repository details page
+* 100% covered unit test
+
+### Tech Stack
+
+* Upgrade to Webpack V3
+* Integrate with unit test coverage tools (karma-coverage)
+* Integrate with Reselect to improve React & Redux performance
+* Integrate with document generation tools on build process

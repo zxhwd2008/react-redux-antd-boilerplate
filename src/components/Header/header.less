@@ -1,3 +1,34 @@
-.home {
-  
+.header {
+  .logo {
+    background: url('static/asset/github.png') no-repeat 0 2px;
+    background-size: 120px 60px;
+    width: 120px;
+    height: 60px;
+    float: left;
+    display: inline-block;
+  }
+
+  .search-wrapper {
+    display: inline-block;
+    margin-left: 25px;
+  }
+}
+
+@media only screen
+and (max-device-width : 480px) {
+  .header {
+    .logo {
+      background: url('static/asset/github_small.svg') no-repeat 0 2px;
+      background-size: 50px 50px;
+      width: 50px;
+      height: 50px;
+      float: left;
+      display: inline-block;
+    }
+
+    .search-wrapper {
+      display: inline-block;
+      margin-left: 4px;
+    }
+  }
 }

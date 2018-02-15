@@ -3,50 +3,37 @@ import { constants } from './constants'
 
 function callApi(endpoint, data = null, method = 'GET') {
   const fullUrl = (endpoint.indexOf('http://') && endpoint.indexOf('https://') === -1) ? constants.API_ROOT + endpoint : endpoint
-  let config = {
+  const config = {
     method,
     mode: 'cors',
     headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json;charset=UTF-8'
-    }
+      Accept: 'application/vnd.github.v3+json',
+      'Content-Type': 'application/json;charset=UTF-8',
+    },
   }
 
-  if (method === 'POST' || method === 'PUT') {
+  if (method === 'POST' || method === 'PUT' || method === 'DELETE') {
     config.body = JSON.stringify(data)
   }
 
   return fetch(fullUrl, config)
-  .then(response =>
-    response.json().then(json => ({ json, response }))
-  )
-  .then(({ json, response }) => {
-    if (!response.ok) {
-      return Promise.reject(json)
-    }
-
-    return json
-  })
+  .then(response => response.json().then(json => ({ json, response, headers: response.headers })))
+  .then(({ json, response, headers }) => (!response.ok ? Promise.reject(json) : { json, headers }))
   .then(
-    response => ({response}),
-    error => ({error: error.message || 'Something bad happened'})
+    ({ json, headers }) => ({ response: json, headers }),
+    error => ({ error: error.message || 'Something bad happened' })
   )
 }
 
 // api services
+export const get = (resource) =>
+callApi(`/${resource}`, null, 'GET')
 
-// Contact
-export const sendContact = (contactUrl, contact) => callApi(`/${contactUrl}`, contact, 'POST')
+export const post = (resource, data) =>
+callApi(`/${resource}`, data, 'POST')
 
-// Contract
-export const sendContract = (contractUrl, contract) => callApi(`/${contractUrl}`, contract, 'POST')
+export const del = (resource, data) =>
+callApi(`/${resource}`, data, 'DELETE')
 
-// ContractOptions
-export const sendContractOptions = (contractOptionsUrl, contractOptions) => callApi(`/${contractOptionsUrl}`, contractOptions, 'POST')
-
-// Customers
-export const sendCustomer = (customerUrl, customer) => callApi(`/${customerUrl}`, customer, 'POST')
-export const getCustomer = (customerUrl) => callApi(`/${customerUrl}`)
-
-// Cars
-export const getCarData = (resource) => callApi(`/${resource}`)
+export const put = (resource, data) =>
+callApi(`/${resource}`, data, 'PUT')

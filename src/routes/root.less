@@ -1,0 +1,27 @@
+html {
+  height: 100%;
+}
+
+body {
+  background: #f0f2f5;
+  min-height: 100%;
+}
+
+.container {
+  .header-wrapper {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+  }
+
+  .content-wrapper {
+    min-height: calc(100% - 64px);
+    padding: 84px 50px 25px 50px;
+  }
+}
+
+:global {
+  .ant-layout-header {
+    background: #fff;
+  }
+}
