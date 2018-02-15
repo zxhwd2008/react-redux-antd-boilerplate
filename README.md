@@ -1,4 +1,4 @@
-# Here-Tech-Assignment
+# React-Redux-Antd-Boilerplate
 
 ## Description
 * Display user profile && user starred repositories by searching Github username
@@ -61,13 +61,6 @@ Now you can visit: http://localhost:8080
 
 
 ## Potential TODOs
-
-### Requirements
-
-* Integrate app with Github OAuth 2.0
-* Adding more filters (Filter by language, keyword etc.)
-* Parse README.md on the repository details page
-* 100% covered unit test
 
 ### Tech Stack
 

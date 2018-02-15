@@ -1,8 +1,8 @@
 {
-  "name": "Here-Tech-Assignment",
+  "name": "react-redux-antd-boilerplate",
   "version": "0.0.1",
   "author": "Xiaohang",
-  "description": "Here tech assignment,search user and list repositories that being starred by that user",
+  "description": "React redux antd boilerplate.",
   "license": "MIT",
   "scripts": {
     "clean": "rimraf dist",
